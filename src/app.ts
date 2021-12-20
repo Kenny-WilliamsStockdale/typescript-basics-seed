@@ -1,16 +1,16 @@
 console.log("Hello TypeScript!");
 
-const pizzas = [{ name: "Pepperoni", toppings: ["pepperoni"] }];
+const pizzas = { name: "Pepperoni", toppings: "pepperoni", crust: "cheesy" };
 
-const mappedPizzas = pizzas.map((pizza) => pizza.name.toUpperCase());
+const mappedPizzas = () => pizzas.crust.toUpperCase();
 
-console.log(mappedPizzas);
+console.log(mappedPizzas());
 
 const pizza = {
   name: "Blazing Inferno",
-  getName: function () {
-    console.log(this.name);
-  },
+  toppings: "Hot Peppers",
+  getName: () =>
+    `The pizza name is ${pizza.name}, its toppings are ${pizza.toppings} and the crust is ${pizzas.crust} `,
 };
 
 console.log(pizza.getName());
