@@ -18,7 +18,7 @@ const pizza = {
 console.log(pizza.getName());
 
 // default function parameters example
-function multiply( a, b = 25) {
+function multiply(a, b = 25) {
   return a * b;
 }
 
@@ -59,45 +59,73 @@ console.log(createOrder(pizza1, toppings1));
 
 //rest parameters
 function sumAll(message, ...arr) {
-  console.log(message)
+  console.log(message);
   return arr.reduce((prev, next) => prev + next);
 }
 
-const sum = sumAll('Hello World!', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+const sum = sumAll("Hello World!", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 console.log(sum);
 
 //arrays spread operator example
-const toppings2 = ['bacon', 'chilli']
+const toppings2 = ["bacon", "chilli"];
 
-const newToppings = ['pepperoni']
+const newToppings = ["pepperoni"];
 
-const allToppings = [... toppings2, ...newToppings]
+const allToppings = [...toppings2, ...newToppings];
 
-console.log(toppings2) // result is the first array on its own
-console.log(newToppings) // result is the second array on its own
-console.log(allToppings)  // result is the first and second array combined into one singular array.
+console.log(toppings2); // result is the first array on its own
+console.log(newToppings); // result is the second array on its own
+console.log(allToppings); // result is the first and second array combined into one singular array.
 
 //object spread operator example
 //taking a copy of the pizza3 object and placing it into the order object
 // taking a copy of order object and placing it into finalOrder object then print to console
 const pizza3 = {
-  name: 'Pepperoni'
-}
+  name: "Pepperoni",
+};
 
-const toppings = ['pepperoni']
+const toppings = ["pepperoni"];
 
 //es5 example
 // const order = Object.assign({}, pizza3, {toppings})
 
-// console.log(order) 
+// console.log(order)
 
 //es6 examples
 const order = {
   ...pizza3,
   toppings,
+};
+
+const finalOrder = { ...order };
+
+console.log(finalOrder);
+
+//destructuring objects and arrays
+// destructure object
+const pizza4 = {
+  name: "Pepperoni",
+  toppings: ["pepperoni"],
+};
+
+function order1({ name: pizzaName, toppings: pizzaToppings }) {
+  return { pizzaName, pizzaToppings };
 }
 
-const finalOrder = {...order}
+const { pizzaName } = order1(pizza4);
 
-console.log(finalOrder)
+console.log(order1(pizza4));
+
+//destructure array
+const toppings3 = ["pepperoni", "bacon", "chilli"];
+
+const [first, second, third] = toppings3;
+
+console.log(first, second, third);
+
+function logToppings([first, second, third]: any) {
+  console.log(first, second, third);
+}
+
+logToppings(toppings3);
