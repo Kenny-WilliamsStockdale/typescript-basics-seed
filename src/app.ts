@@ -77,3 +77,27 @@ const allToppings = [... toppings2, ...newToppings]
 console.log(toppings2) // result is the first array on its own
 console.log(newToppings) // result is the second array on its own
 console.log(allToppings)  // result is the first and second array combined into one singular array.
+
+//object spread operator example
+//taking a copy of the pizza3 object and placing it into the order object
+// taking a copy of order object and placing it into finalOrder object then print to console
+const pizza3 = {
+  name: 'Pepperoni'
+}
+
+const toppings = ['pepperoni']
+
+//es5 example
+// const order = Object.assign({}, pizza3, {toppings})
+
+// console.log(order) 
+
+//es6 examples
+const order = {
+  ...pizza3,
+  toppings,
+}
+
+const finalOrder = {...order}
+
+console.log(finalOrder)
