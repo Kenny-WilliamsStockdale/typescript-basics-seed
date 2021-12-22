@@ -66,3 +66,14 @@ function sumAll(message, ...arr) {
 const sum = sumAll('Hello World!', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 console.log(sum);
+
+//arrays spread operator example
+const toppings2 = ['bacon', 'chilli']
+
+const newToppings = ['pepperoni']
+
+const allToppings = [... toppings2, ...newToppings]
+
+console.log(toppings2) // result is the first array on its own
+console.log(newToppings) // result is the second array on its own
+console.log(allToppings)  // result is the first and second array combined into one singular array.
