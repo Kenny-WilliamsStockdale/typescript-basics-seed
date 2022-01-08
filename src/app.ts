@@ -130,19 +130,28 @@ function logToppings([first, second, third]: any) {
 
 logToppings(toppings3);
 
-
 //Number types in type script
-//declaring that returns will be in number data type. 
+//declaring that returns will be in number data type.
 //Useful for easy reading and showing to the team upon code review.
 const pizzaCost: number = 10;
-const pizzaToppings: number = 2
+const pizzaToppings: number = 2;
 
-function calculatePrice(cost: number, toppings: number):number {
-  return cost + 1.5 * toppings
+function calculatePrice(cost: number, toppings: number): number {
+  return cost + 1.5 * toppings;
 }
 
 const cost: number = calculatePrice(pizzaCost, pizzaToppings);
 console.log(`Pizza cost: ${cost}`);
 
-
 //string types in type script
+//declaring that returns will be in number data type.
+//Useful for easy reading and showing to the team upon code review.
+const coupon: string = "pizza25";
+
+function normalizeCoupon(code: string): string {
+  return code.toUpperCase();
+}
+
+const couponMessage: string = `Final coupon is ${normalizeCoupon(coupon)}`;
+
+console.log(couponMessage);
